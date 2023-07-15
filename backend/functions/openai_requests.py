@@ -8,7 +8,7 @@ from functions.database import get_recent_messages
 #Retrieve environment variables
 openai.organization =config("OPEN_AI_ORG")
 openai.api_key=config("OPEN_AI_KEY")
-# openai.api_key = os.environ['OPENAI_API_KEY']
+
 
 
 #OpenAI whisper
@@ -16,9 +16,6 @@ openai.api_key=config("OPEN_AI_KEY")
 
 def convert_audio_to_text(audio_file):
     try:
-        # transcript=openai.asr.transcribe("whisper-1",audio_file)
-        # message_text=transcript("text")
-        # return message_text
         audio_instance = openai.Audio()
         transcript = audio_instance.transcribe("whisper-1", audio_file)
         message_text = transcript["text"]

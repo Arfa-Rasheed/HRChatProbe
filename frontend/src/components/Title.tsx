@@ -30,7 +30,7 @@ function Title({ setMessages }: Props) {
 
   return (
     <div className="flex justify-between items-center w-full py-7 px-7 bg-gray-900 text-white font-bold shadow">
-      <div className="italic">VoxBot</div>
+      <div className="italic">HRChatProbe</div>
       <button onClick={resetConversation}  className={
           "transition-all duration-300 text-blue-300 hover:text-pink-500 " +
           (isResetting && "animate-pulse")

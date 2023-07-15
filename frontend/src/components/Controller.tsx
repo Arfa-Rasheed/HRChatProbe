@@ -16,7 +16,7 @@ function Controller() {
   };
 
   const handleStop = async (blobURL:string) => {
-   const myMessage={sender:"me",blobURL}
+   const myMessage={sender:"Employee",blobURL}
    const messageArr=[...messages,myMessage]
 
    //Convert bloburl to blob object
@@ -40,7 +40,7 @@ function Controller() {
 
 
             //Append rachel response to messageArr
-            const rachelMessage={sender:'rachel',blobURL:audio.src};
+            const rachelMessage={sender:"HR",blobURL:audio.src};
             messageArr.push(rachelMessage);
             setMessages(messageArr)
 
@@ -64,9 +64,9 @@ function Controller() {
        <div className="mt-5 px-5">
         {
             messages.map((audio,index)=>(
-                <div key={index + audio.sender} className={"flex flex-col " + (audio.sender === 'rachel' && "flex items-end")}>
+                <div key={index + audio.sender} className={"flex flex-col " + (audio.sender === "HR" && "flex items-end")}>
                     <div className="mt-4">
-                        <p className= {audio.sender == 'rachel'? "text-right mr-2 italic text-green": 'ml-2 italic text-blue'}>
+                        <p className= {audio.sender == "HR"? "text-right mr-2 italic text-green": 'ml-2 italic text-blue'}>
                             {audio.sender}
                         </p>
                         {/* Audio Message */}
